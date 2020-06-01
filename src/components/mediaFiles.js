@@ -1,0 +1,33 @@
+export default{
+// Imports from music audio files
+track1: require('./Assets/music/Arc North - Catch Me When I Fall (ft. Sarah de Warren) [Magic Release].mp3'),
+track2: require('./Assets/music/Ellis - Clear My Head.mp3'),
+track3: require('./Assets/music/Jim Yosef & Alex Skrindo - Ruby [NCS Release].mp3'),
+track4: require('./Assets/music/Leonell Cassio - Lie 2 You (ft. Dylan Emmet).mp3'),
+track5: require('./Assets/music/Lost Sky - Dreams.mp3'),
+track6: require('./Assets/music/Spce Cadex & Exede - Till Dawn.mp3'),
+track7: require('./Assets/music/VETA - Memories.mp3'),
+track8: require('./Assets/music/almost.mp3'),
+track9: require('./Assets/music/love_me.mp3'),
+track10: require('./Assets/music/nobody.mp3'),
+track11: require('./Assets/music/one_more_night.mp3'),
+track12: require('./Assets/music/shape_of_you.mp3'),
+track13: require('./Assets/music/somebody_know.mp3'),
+track14: require('./Assets/music/you_reason.mp3'),
+// Import music covers
+img1: require('./Assets/img/song_covers/catchme.jpg'),
+img2: require('./Assets/img/song_covers/clearhead.jpg'),
+img3: require('./Assets/img/song_covers/ruby.jpg'),
+img4: require('./Assets/img/song_covers/lie2you.jpg'),
+img5: require('./Assets/img/song_covers/dreams.jpg'),
+img6: require('./Assets/img/song_covers/tilldawn.jpg'),
+img7: require('./Assets/img/song_covers/memories.jpg'),
+img8: require('./Assets/img/song_covers/almost.jpg'),
+img9: require('./Assets/img/song_covers/love_me.jpg'),
+img10: require('./Assets/img/song_covers/nobody.jpg'),
+img11: require('./Assets/img/song_covers/one_more_night.jpg'),
+img12: require('./Assets/img/song_covers/shape_of_you.jpg'),
+img13: require('./Assets/img/song_covers/somebody_know.jpg'),
+img14: require('./Assets/img/song_covers/you_reason.jpg'),
+}
+
