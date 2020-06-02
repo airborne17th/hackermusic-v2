@@ -120,7 +120,7 @@ render(){
             <div className="banner" style={{ backgroundImage: "url(" + Shuffle + ")"}}>
             <p>{currentPlaylist[random].name} <br></br> {currentPlaylist[random].author}</p>
             <ReactAudioPlayer src={currentPlaylist[random].audio} autoPlay={false} controls onEnded={this.handleClick.bind(this)} autoPlay={afterFirst} />
-            <button class="button" onClick={this.handleClick.bind(this)}>Shuffle</button>
+            <button className="button" onClick={this.handleClick.bind(this)}>Shuffle</button>
             </div>
 
           {currentPlaylist.map(item =>
