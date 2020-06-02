@@ -33,16 +33,16 @@ class Player extends React.Component{
         {id: 4, name:'Orchestral Suite No. 3, BWV 1068', author: 'Bach', img: mediaFiles.img18, audio: mediaFiles.track18},
         {id: 5, name:' Symphony No., K. 551 Jupiter', author: 'Mozart', img: mediaFiles.img19, audio: mediaFiles.track19},
         {id: 6, name:'Préludes, Op. 28: No. 15, Raindrop', author: 'Chopin', img: mediaFiles.img20, audio: mediaFiles.track20}],
+      playlist4: [
+          {id: 1, name:'Carissa', author: 'Desert Star', img: mediaFiles.img21, audio: mediaFiles.track21}, 
+          {id: 2, name:'Ghosts', author: 'Jacob Tilberg', img: mediaFiles.img22, audio: mediaFiles.track22},
+          {id: 3, name:'Hello My Old Heart', author: 'Oh Hellos', img: mediaFiles.img23, audio: mediaFiles.track23}],
       currentPlaylist: [
-        {id: 1, name:'Catch Me When I Fall', author: 'Arc North ft. Sarah de Warren', img: mediaFiles.img1, audio: mediaFiles.track1}, 
-        {id: 2, name:'Clear My Head', author: 'Ellis', img: mediaFiles.img2, audio: mediaFiles.track2},
-        {id: 3, name:'Ruby', author: 'Jim Yosef & Alex Skrindo', img: mediaFiles.img3, audio: mediaFiles.track3},
-        {id: 4, name:'Lie 2 You', author: 'Leonell Cassio', img: mediaFiles.img4, audio: mediaFiles.track4},
-        {id: 5, name:'Dreams', author: 'Lost Sky', img: mediaFiles.img5, audio: mediaFiles.track5},
-        {id: 6, name:'Till Dawn', author: 'Spce Cadex & Exede', img: mediaFiles.img6, audio: mediaFiles.track6},
-        {id: 7, name:'Memories', author: 'VETA', img: mediaFiles.img7, audio: mediaFiles.track7}],
+          {id: 1, name:'Carissa', author: 'Desert Star', img: mediaFiles.img21, audio: mediaFiles.track21}, 
+          {id: 2, name:'Ghosts', author: 'Jacob Tilberg', img: mediaFiles.img22, audio: mediaFiles.track22},
+          {id: 3, name:'Hello My Old Heart', author: 'Oh Hellos', img: mediaFiles.img23, audio: mediaFiles.track23}],
       random: 0,
-      choice: "0",
+      choice: 0,
       afterFirst: false
     }
     this.handleClick = this.handleClick.bind(this);
@@ -51,18 +51,24 @@ class Player extends React.Component{
 
     handlePlaylist(event){
       let newPlaylist = false;
+      let choice_switch;
       this.setState({choice: event.target.value});
-      switch(this.state.choice) {
-        case "0":
+      choice_switch = parseInt(this.state.choice);
+      switch(parseInt(choice_switch)) {
+        case 0:
+          this.setState({currentPlaylist: this.state.playlist});
+          newPlaylist = true;
+          break;
+        case 1:
           this.setState({currentPlaylist: this.state.playlist2});
           newPlaylist = true;
           break;
-        case "1":
+        case 2:
           this.setState({currentPlaylist: this.state.playlist3});
           newPlaylist = true;
           break;
-        case "2":
-          this.setState({currentPlaylist: this.state.playlist});
+        case 3:
+          this.setState({currentPlaylist: this.state.playlist4});
           newPlaylist = true;
           break;
         default:  
@@ -70,6 +76,7 @@ class Player extends React.Component{
       if(newPlaylist === true){
         this.setState({afterFirst: false}); 
       }
+      console.log(choice_switch);
     }
 
     handleClick() {
@@ -85,31 +92,35 @@ class Player extends React.Component{
     }
 
 render(){
-  const { random, afterFirst, choice, currentPlaylist } = this.state;
+  const { random, afterFirst, currentPlaylist } = this.state;
   let playlist_options = [
-    { id: 1, name: 'Chill'},
-    { id: 2, name: 'Pop'},
-    { id: 3, name: 'Classical' }
+    { id: 1, name: 'Start Up'},
+    { id: 2, name: 'Chill'},
+    { id: 3, name: 'Pop' },
+    { id: 4, name: 'Classical' }
   ];
 
     return (
         <div className="App-player">
             
            <div>
-            <h2>{playlist_options[choice].name} &nbsp;
+            <form>
+            <h2>Select a Playlist &nbsp;
             <select name="playlist_choice" id="playlist_choice" value={this.state.choice} onChange={this.handlePlaylist}>
               <option value={0}>{playlist_options[0].name}</option>
               <option value={1}>{playlist_options[1].name}</option>
               <option value={2}>{playlist_options[2].name}</option>
+              <option value={3}>{playlist_options[3].name}</option>
             </select>
-            {/* <button onClick={this.handlePlaylist}>Select</button> */}
             </h2>
+            </form>
+            
             </div> 
 
             <div className="banner" style={{ backgroundImage: "url(" + Shuffle + ")"}}>
             <p>{currentPlaylist[random].name} <br></br> {currentPlaylist[random].author}</p>
             <ReactAudioPlayer src={currentPlaylist[random].audio} autoPlay={false} controls onEnded={this.handleClick.bind(this)} autoPlay={afterFirst} />
-            <button onClick={this.handleClick.bind(this)}>Shuffle</button>
+            <button class="button" onClick={this.handleClick.bind(this)}>Shuffle</button>
             </div>
 
           {currentPlaylist.map(item =>

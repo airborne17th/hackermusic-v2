@@ -4,13 +4,26 @@ import logo from '../components/Assets/img/logo.png';
 import user from '../components/Assets/img/user.png';
 function Header() {
     return (
+        <body>
         <div className="Header">
         <header className="App-header">
-            <p><img src={logo} height='144' width='144' alt="Hacker Music Logo"></img> Hacker Music</p>
-            <p><img src={user} height='144' width='144' alt="User Profile Pic"></img> airborne17th</p>
-            <p><button className='button'>Log Off</button></p>
+            <table>
+            <thead><img src={logo} height='80' width='80' alt="Hacker Music Logo"></img></thead>
+            <tbody>Hacker Music</tbody>
+            </table>
+            <table>
+            <thead><img src={user} height='100' width='100' alt="User Profile Pic"></img></thead>
+            <tbody>airborne17th</tbody>
+            </table>
+            <table>
+            <tbody><a href="#">Home</a></tbody>
+            <tbody><a href="#">About</a></tbody>    
+            <tbody><a href="#">Profile</a></tbody>
+            <button className='button'>Log Off</button>
+            </table>
         </header>
         </div>
+        </body>
     );
   }
 

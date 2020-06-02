@@ -20,6 +20,9 @@ track17: require('./Assets/music/jupiter.mp3'),
 track18: require('./Assets/music/MoonlightSonata.mp3'),
 track19: require('./Assets/music/raindrop.mp3'),
 track20: require('./Assets/music/suite_no_3.mp3'),
+track21: require('./Assets/music/Carissa.mp3'),
+track22: require('./Assets/music/Ghosts.mp3'),
+track23: require('./Assets/music/HelloHeart.mp3'),
 // Import music covers
 img1: require('./Assets/img/song_covers/catchme.jpg'),
 img2: require('./Assets/img/song_covers/clearhead.jpg'),
@@ -41,5 +44,8 @@ img17: require('./Assets/img/song_covers/schumann.jpg'),
 img18: require('./Assets/img/song_covers/bach.jpg'),
 img19: require('./Assets/img/song_covers/mozart.jpg'),
 img20: require('./Assets/img/song_covers/schumann.jpg'),
+img21: require('./Assets/img/song_covers/Carissa.jpg'),
+img22: require('./Assets/img/song_covers/Ghosts.jpg'),
+img23: require('./Assets/img/song_covers/HelloHeart.jpg'),
 }
 

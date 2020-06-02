@@ -24,7 +24,7 @@ class LikeBtn extends React.Component {
               className="likebtn"
               onClick={this.addLike}
             >
-              <FontAwesomeIcon icon={faHeart} size="lg" style={{ color: "#33c3f0" }} />
+              <FontAwesomeIcon icon={faHeart} size="lg" style={{ color: "#9eadc8" }} />
             </button>
           </div>
         );
