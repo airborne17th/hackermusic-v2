@@ -26,6 +26,13 @@ class Player extends React.Component{
       {id: 5, name:'Shape of You', author: 'Ed Sheeran', img: mediaFiles.img12, audio: mediaFiles.track12},
       {id: 6, name:'Somebody That I Used To Know', author: 'Gotye ft. Kimbra', img: mediaFiles.img13, audio: mediaFiles.track13},
       {id: 7, name:'You are the Reason', author: 'Calum Scott', img: mediaFiles.img14, audio: mediaFiles.track14}],
+      playlist3: [
+        {id: 1, name:'Eine Kleine Nachtmusik', author: 'Mozart', img: mediaFiles.img15, audio: mediaFiles.track15}, 
+        {id: 2, name:'No. 14, Moonlight Sonata', author: 'Beethoven', img: mediaFiles.img16, audio: mediaFiles.track16},
+        {id: 3, name:'5 Pieces in Folk Style', author: 'Schumann', img: mediaFiles.img17, audio: mediaFiles.track17},
+        {id: 4, name:'Orchestral Suite No. 3, BWV 1068', author: 'Bach', img: mediaFiles.img18, audio: mediaFiles.track18},
+        {id: 5, name:' Symphony No., K. 551 Jupiter', author: 'Mozart', img: mediaFiles.img19, audio: mediaFiles.track19},
+        {id: 6, name:'Préludes, Op. 28: No. 15, Raindrop', author: 'Chopin', img: mediaFiles.img20, audio: mediaFiles.track20}],
       currentPlaylist: [
         {id: 1, name:'Catch Me When I Fall', author: 'Arc North ft. Sarah de Warren', img: mediaFiles.img1, audio: mediaFiles.track1}, 
         {id: 2, name:'Clear My Head', author: 'Ellis', img: mediaFiles.img2, audio: mediaFiles.track2},
@@ -51,6 +58,10 @@ class Player extends React.Component{
           newPlaylist = true;
           break;
         case "1":
+          this.setState({currentPlaylist: this.state.playlist3});
+          newPlaylist = true;
+          break;
+        case "2":
           this.setState({currentPlaylist: this.state.playlist});
           newPlaylist = true;
           break;
@@ -75,19 +86,21 @@ class Player extends React.Component{
 
 render(){
   const { random, afterFirst, choice, currentPlaylist } = this.state;
-  let map = [
-    { id: 1, name: 'Chill', list: this.state.playlist },
-    { id: 2, name: 'Pop', list: this.state.playlist2 }
+  let playlist_options = [
+    { id: 1, name: 'Chill'},
+    { id: 2, name: 'Pop'},
+    { id: 3, name: 'Classical' }
   ];
 
     return (
         <div className="App-player">
             
            <div>
-            <h2>{map[choice].name} &nbsp;
+            <h2>{playlist_options[choice].name} &nbsp;
             <select name="playlist_choice" id="playlist_choice" value={this.state.choice} onChange={this.handlePlaylist}>
-              <option value={0}>{map[0].name}</option>
-              <option value={1}>{map[1].name}</option>
+              <option value={0}>{playlist_options[0].name}</option>
+              <option value={1}>{playlist_options[1].name}</option>
+              <option value={2}>{playlist_options[2].name}</option>
             </select>
             {/* <button onClick={this.handlePlaylist}>Select</button> */}
             </h2>
