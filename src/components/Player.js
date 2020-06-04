@@ -76,7 +76,7 @@ class Player extends React.Component{
       if(newPlaylist === true){
         this.setState({afterFirst: false}); 
       }
-      console.log(choice_switch);
+      
     }
 
     handleClick() {
